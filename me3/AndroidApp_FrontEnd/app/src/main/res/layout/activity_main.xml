@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/login"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 툴바 -->
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="176dp"
+            android:layout_height="350dp"
+            android:background="@drawable/layout_background"
+            android:orientation="vertical"
+            android:padding="40dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4pt"
+                android:text="Glow up과 함께 당신만의 팔레트를 완성해보세요."
+                android:textColor="#000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/signInId"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15pt"
+                android:background="@drawable/edittext_rectangle"
+                android:hint="아이디를 입력해주세요."
+                android:inputType="textPersonName"
+                android:paddingLeft="4pt"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/signInPw"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10pt"
+                android:background="@drawable/edittext_rectangle"
+                android:hint="비밀번호를 입력해주세요."
+                android:inputType="textPassword"
+                android:paddingLeft="4pt"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15pt"
+                android:background="@drawable/edittext_rectangle"
+                android:paddingTop="0dp"
+                android:text="로그인"
+                android:textColor="#fff"
+                app:backgroundTint="#9CA09F" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="event">
+	<resultMap id="eventResult" type="event">
+		<result property="evNo" column="EV_NO" />
+		<result property="evTitle" column="EV_TITLE" />
+		<result property="evContent" column="EV_CONTENT" />
+		<result property="evRegId" column="EV_REG_ID" />
+		<result property="evModId" column="EV_MOD_ID" />
+		<result property="evRegDate" column="EV_REG_DATE" />
+		<result property="evModDate" column="EV_MOD_DATE" />
+		<result property="evHit" column="EV_HIT" />
+	</resultMap>
+
+	<select id="eventList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	eventList	*/
+			SELECT EVENT.EV_NO
+				 , EVENT.EV_TITLE
+				 , EVENT.EV_CONTENT
+				 , EVENT.EV_REG_ID
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE =  EVENT.EV_REG_ID) AS USER_NAME
+				 , EVENT.EV_MOD_ID
+				 , EVENT.EV_REG_DATE
+				 , EVENT.EV_MOD_DATE
+				 , EVENT.EV_HIT
+			FROM   TB_EVENT EVENT
+			WHERE  1=1
+			ORDER BY EVENT.EV_REG_DATE DESC
+		]]>
+	</select>
+
+	<select id="eventView" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	eventView	*/
+			SELECT EVENT.EV_NO
+				 , EVENT.EV_TITLE
+				 , EVENT.EV_CONTENT
+				 , EVENT.EV_REG_ID
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE =  EVENT.EV_REG_ID) AS USER_NAME
+				 , EVENT.EV_REG_DATE
+				 , EVENT.EV_HIT
+			FROM   TB_EVENT EVENT
+			WHERE  1=1
+			AND    EV_NO = #{evNo}
+		]]>
+	</select>
+
+	<select id="maxEventNo" resultType="string">
+		<![CDATA[
+		/*	maxEventNo	*/
+			SELECT MAX(EVENT.EV_NO)
+			FROM   TB_EVENT EVENT
+		]]>
+	</select>
+
+	<insert id="eventWrite" parameterType="event">
+		<![CDATA[
+		/*	eventWrite	*/
+			INSERT INTO TB_EVENT
+			(EV_NO
+			, EV_TITLE
+			, EV_CONTENT
+			, EV_REG_ID
+			, EV_REG_DATE
+			, EV_MOD_DATE
+			) VALUES (
+			  'B' || LPAD(EVENT_SEQ.NEXTVAL, 5, 0)
+			, #{evTitle}
+			, #{evContent}
+			, #{evRegId}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+		]]>
+	</insert>
+
+	<update id="eventModify" parameterType="event">
+		<![CDATA[
+		/*	eventModify	*/
+			UPDATE TB_EVENT
+			SET EV_TITLE         =  #{evTitle}
+			  , EV_CONTENT       =  #{evContent}
+			WHERE EV_NO = #{evNo}
+		]]>
+	</update>
+
+	<update id="updateEventHits" parameterType="event">
+		<![CDATA[
+		/*	updateEventHits	*/
+			UPDATE TB_EVENT
+			SET EV_HIT          =  EV_HIT + 1
+			WHERE EV_NO = #{evNo}
+		]]>
+	</update>
+
+	<delete id="deleteEvent" parameterType="map">
+		<![CDATA[
+		/*	deleteEvent	*/
+			DELETE
+			FROM  TB_EVENT
+			WHERE 1=1
+			AND EV_NO = #{evNo}
+		]]>
+	</delete>
+
+	<delete id="deleteEvent2" parameterType="map">
+		<![CDATA[
+		/*	deleteEvent2	*/
+			DELETE
+			FROM  TB_EVENT
+			WHERE 1=1
+			AND EV_REG_ID = #{evRegId};
+		]]>
+	</delete>
+</mapper>

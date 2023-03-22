@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GoodsInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="414dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="1dp"
+        android:background="#dddddd"
+        android:gravity="right"
+        app:layout_constraintBottom_toTopOf="@+id/videoView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메인"
+            android:background="@drawable/edittext_rectangle"
+            app:backgroundTint="#dddddd"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/toolbar2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#dddddd"
+            android:text="오시는 길"
+            android:textColor="#000000"
+            app:backgroundTint="#dddddd"
+            app:layout_constraintBottom_toTopOf="@+id/mapview"
+            app:layout_constraintEnd_toStartOf="@+id/btnLocationGoMain" />
+
+        <Button
+            android:id="@+id/toolbar3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#dddddd"
+            android:text="홍보"
+            android:textColor="#000000"
+            app:backgroundTint="#dddddd"
+            app:layout_constraintBottom_toTopOf="@+id/mapview"
+            app:layout_constraintEnd_toStartOf="@+id/btnLocationGoMain" />
+        <Button
+            android:id="@+id/toolbar4"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#dddddd"
+            android:text="상품"
+            android:textColor="#000000"
+            app:backgroundTint="#dddddd"
+            app:layout_constraintBottom_toTopOf="@+id/mapview"
+            app:layout_constraintEnd_toStartOf="@+id/btnLocationGoMain" />
+
+        <Button
+            android:id="@+id/btnGoMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:background="@drawable/edittext_rectangle"
+            app:backgroundTint="#dddddd"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <GridView
+        android:id="@+id/gridview1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:numColumns="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

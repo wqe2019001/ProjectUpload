@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+	<resultMap id="commentResult" type="comment">
+		<result property="qnaNo" column="QNA_NO" />
+		<result property="userCode" column="USER_CODE" />
+		<result property="userCommentNo" column="USER_COMMENT_NO" />
+		<result property="userComment" column="USER_COMMENT" />
+		<result property="commentDate" column="COMMENT_DATE" />
+	</resultMap>
+
+	<select id="retrieveCommentList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveCommentList	*/
+			SELECT COMMENT.QNA_NO
+				 , COMMENT.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = COMMENT.USER_CODE) AS USER_ID
+				 , COMMENT.USER_COMMENT_NO
+				 , COMMENT.USER_COMMENT
+				 , COMMENT.COMMENT_DATE
+				 , (SELECT COUNT(*) FROM TB_COMMENT WHERE QNA_NO = #{qnaNo}) AS COMMENT_COUNT
+				 , (SELECT MARK_RATING FROM TB_MARK WHERE 1=1 AND QNA_NO = #{qnaNo} AND USER_CODE = COMMENT.USER_CODE) AS MARK_RATING
+			FROM   TB_COMMENT
+			AND    QNA_NO = #{qnaNo}
+			ORDER BY TB_COMMENT.COMMENT_DATE DESC
+		]]>
+	</select>
+
+	<select id="retrieveComment" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveComment	*/
+			SELECT COMMENT.QNA_NO
+				 , COMMENT.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = COMMENT.USER_CODE) AS USER_ID
+				 , COMMENT.USER_COMMENT_NO
+				 , COMMENT.USER_COMMENT
+				 , COMMENT.COMMENT_DATE
+				 , (SELECT COUNT(*) FROM TB_COMMENT WHERE QNA_NO = #{qnaNo}) AS COMMENT_COUNT
+			FROM   TB_COMMENT COMMENT
+			WHERE  1=1
+			AND    QNA_NO = #{qnaNo}
+			AND    USER_CODE = #{userCode}
+		]]>
+	</select>
+
+	<insert id="createComment" parameterType="map">
+		<![CDATA[
+		/*	createComment	*/
+			INSERT INTO TB_COMMENT(
+			  QNA_NO
+			, USER_CODE
+			, USER_COMMENT_NO
+			, USER_COMMENT
+			, COMMENT_DATE
+			) VALUES (
+			  #{qnaNo}
+			, #{userCode}
+			, (SELECT NVL(MAX(USER_COMMENT_NO), 0) + 1 FROM TB_COMMENT WHERE 1=1 AND QNA_NO = #{qnaNo} AND USER_CODE = #{userCode})
+			, #{userComment}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+		]]>
+	</insert>
+
+	<delete id="deleteComment" parameterType="map">
+		<![CDATA[
+		/*	deleteComment	*/
+			DELETE
+			FROM  TB_COMMENT
+			WHERE 1=1
+			AND QNA_NO = #{qnaNo}
+			AND USER_CODE = #{userCode}
+			AND USER_COMMENT_NO = #{userCommentNo}
+		]]>
+	</delete>
+</mapper>
