@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+*{
+    font-family: 'Noto Sans KR', 'Playfair Display';
+  }
+
+.loginform{
+    text-align: center;
+}
+#id{
+    margin-bottom: 40px;
+}
+.inputlogin{
+    max-width: 699px;
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    font-size: 28px;
+}
+
+.btnlogin{
+    max-width: 699px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 60px;
+    margin-top: 40px;
+
+}
+.btnnaverlogin{
+    max-width: 699px;
+    width: 100%;
+    height: 100px;
+    margin-top: 60px;
+    color: #fff;
+    background-color: #03C75A !important;
+    border: #03C75A !important;
+}
+
+.hhr{
+    width: 699px;
+}
+.Nv{
+    font-weight: 900;
+}
+

@@ -1,0 +1,39 @@
+$body-color:                #000;
+$gray-400:                  #535459;//input border color
+$dark:                      $gray-400;
+
+a:hover {cursor: pointer;}
+
+// Links
+//
+// Style anchor elements.
+$link-decoration:           none;
+
+// scss-docs-start table-variables
+$table-border-color:        #000;
+
+// scss-docs-start border-radius-variables
+$border-radius-lg:          0;
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  xxl: 1440px
+);
+
+// scss-docs-start form-label-variables
+$form-label-margin-bottom:  0.938rem;
+$form-label-font-size:      1.25rem;
+$form-label-font-weight:    500;
+$form-label-color:          $body-color;
+
+// scss-docs-start input-btn-variables
+$input-btn-padding-y-lg:    1.125rem;
+$input-btn-padding-x-lg:    1.25rem;
+
+$input-placeholder-color:   #bbb;
+
+// scss-docs-start btn-variables
+$btn-padding-y-lg:          .813rem;
+$btn-padding-x-lg:          1.875rem;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

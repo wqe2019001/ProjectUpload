@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+*{
+  font-family: 'Noto Sans KR', 'Playfair Display';
+}
+
+.main{
+  max-width: 100%;
+  z-index: -1;
+  height: 864px;
+  background-image:url(../resource/main/Main2.png), url(../resource/main/Main1.png); background-size:483px 373px, 513px 375px; background-position:right 0px, left 23.2rem; background-repeat:no-repeat;
+}
+.h4{
+  font-weight: 500 !important;
+  padding-top: 2.3rem;;
+  margin-left: 30px !important;
+  font-family: 'Noto Sans KR' !important;
+  display: flex;
+  justify-content: center;
+}
+.mainText2{
+  font-size: 9rem;
+  line-height: 250px;
+  font-family: 'Playfair Display';
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+.mainText3{
+  font-size: 9rem;
+  line-height: 110px;
+  font-family: 'Playfair Display';
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+.mainBtn{
+  width: 327px;
+  height: 72px;
+  text-align: center;
+  background-color: #000;
+  margin-top: 5.6rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.display-6 {
+  text-decoration: none !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  font-family: 'Noto Sans KR';
+}
+.content{
+  margin-top: 10.125rem;
+}
+.Ptext{
+ font-family: 'Playfair Display';
+ text-align: center;
+ padding-bottom: 95px;
+ color: #000;
+}
+.Pimg{
+  padding-bottom: 1.875rem;
+}
+.Pimg1{
+  padding-bottom: 1.15em;
+}
+@media(min-width: 1440px){
+  .main{
+    max-width: 100%;
+    height: 864px;
+    background-image:url(../resource/main/Main2.png), url(../resource/main/Main1.png); background-size:690px 533px, 733px 536px; background-position:right 0px, left 20.75rem; background-repeat:no-repeat;
+  }
+  .h4{
+    font-weight: 500 !important;
+    padding-top: 2.375rem;
+    font-family: 'Noto Sans KR' !important;
+    display: block;
+  }
+  .mainText2{
+    font-size: 19.334rem;
+    margin-top: 2.692rem;
+    margin-left: 4.5rem;
+    line-height: 260px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    display: block;
+    color: #000;
+  }
+
+  .mainText3{
+    font-size: 17.801rem;
+    margin-left: 28rem;
+    line-height: 210px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    display: block;
+    color: #000;
+  }
+  
+  .mainBtn{
+    width: 327px;
+    height: 72px;
+    text-align: center;
+    background-color: #000;
+    margin-top: 8rem;
+    margin-left: 41.438rem;
+    display: block;
+    position: static;
+    transform:none;
+  }
+  .content{
+    margin-top: 10.125rem;
+  }
+  .Pimg{
+    padding-bottom: 1.875rem;
+  }
+  .Pimg1{
+    padding-bottom: 1.81em;
+  }
+}

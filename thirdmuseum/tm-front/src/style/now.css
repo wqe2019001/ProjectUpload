@@ -1,0 +1,100 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    font-family: 'Noto Sans KR';
+}
+
+.now_title{
+    margin-bottom: 5.8%;
+    margin-top: 5.8%;
+    text-align: center;
+}
+
+.NowImg1{
+    max-width: 1920px;
+    width: 100%;
+    max-height: 900px;
+    margin-bottom: 10.8%;
+}
+
+.NowImg2{
+    max-width:945px ;
+    width: 100%;
+    max-height: 620px;
+    margin-bottom: 10.8%;
+    margin-top: 10.8%;
+    margin-right: 12.5%;
+}
+
+.NowImg3{
+    max-width: 945px;
+    width: 100%;
+    max-height: 625px;
+    margin-bottom: 10.8%;
+    margin-left: 12.5%;
+    
+}
+
+.NowImg4{
+    max-width: 945px;
+    width: 100%;
+    max-height: 560px;
+    margin-right: 12.5%;
+}
+
+.NowText_Left{
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 12.5%;
+}
+
+.NowText_Title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 12.5%;
+    
+}
+
+.NowInner_Text{
+    font-size: 16px;
+    margin-right: 12.5%;
+}
+
+.NowImg2_Title{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20.8%;
+    margin-left: 12.5%;
+    
+}
+.NowImg3_Title{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+    margin-left: 1%;
+}
+
+.NowImg4_Title{
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 12.5%;
+}
+
+.NowImg2_Text {
+    font-size: 16px;
+    margin-left: 12.5%;
+}
+
+.NowImg3_Text{
+    font-size: 16px;
+    text-align: right;
+    margin-right: 12.5%;
+}
+
+.NowImg4_Text{
+    font-size: 16px;
+    margin-left: 12.5%;
+}

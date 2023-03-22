@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    font-family: 'Noto Sans KR';
+}
+
+
+.location_title{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.location_info2{
+    display: table-cell;
+}
+.location_info3{
+    display: table-cell;
+    padding-left: 3%;
+    width: 60%;
+}
+
+#map{
+    max-width: 1920px;
+    margin-bottom: 3%;
+}
+
+.location_info{
+    font-weight: bold;
+}
