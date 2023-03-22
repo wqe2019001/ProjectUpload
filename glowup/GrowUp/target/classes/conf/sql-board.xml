@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<resultMap id="boardResult" type="board">
+		<result property="boNo" column="BO_NO" />
+		<result property="boTitle" column="BO_TITLE" />
+		<result property="boContent" column="BO_CONTENT" />
+		<result property="boRegId" column="BO_REG_ID" />
+		<result property="boModId" column="BO_MOD_ID" />
+		<result property="boRegDate" column="BO_REG_DATE" />
+		<result property="boModDate" column="BO_MOD_DATE" />
+		<result property="boHit" column="BO_HIT" />
+	</resultMap>
+
+	<select id="boardList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	boardList	*/
+			SELECT BOARD.BO_NO
+				 , BOARD.BO_TITLE
+				 , BOARD.BO_CONTENT
+				 , BOARD.BO_REG_ID
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE =  BOARD.BO_REG_ID) AS USER_NAME
+				 , BOARD.BO_MOD_ID
+				 , BOARD.BO_REG_DATE
+				 , BOARD.BO_MOD_DATE
+				 , BOARD.BO_HIT
+			FROM   TB_BOARD BOARD
+			WHERE  1=1
+			ORDER BY BOARD.BO_REG_DATE DESC
+		]]>
+	</select>
+
+	<select id="boardView" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	boardView	*/
+			SELECT BOARD.BO_NO
+				 , BOARD.BO_TITLE
+				 , BOARD.BO_CONTENT
+				 , BOARD.BO_REG_ID
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE =  BOARD.BO_REG_ID) AS USER_NAME
+				 , BOARD.BO_REG_DATE
+				 , BOARD.BO_HIT
+			FROM   TB_BOARD BOARD
+			WHERE  1=1
+			AND    BO_NO = #{boNo}
+		]]>
+	</select>
+
+	<select id="maxBoardNo" resultType="string">
+		<![CDATA[
+		/*	maxBoardNo	*/
+			SELECT MAX(BOARD.BO_NO)
+			FROM   TB_BOARD BOARD
+		]]>
+	</select>
+
+	<insert id="boardWrite" parameterType="board">
+		<![CDATA[
+		/*	boardWrite	*/
+			INSERT INTO TB_BOARD
+			(BO_NO
+			, BO_TITLE
+			, BO_CONTENT
+			, BO_REG_ID
+			, BO_REG_DATE
+			, BO_MOD_DATE
+			) VALUES (
+			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
+			, #{boTitle}
+			, #{boContent}
+			, #{boRegId}
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)
+		]]>
+	</insert>
+
+	<update id="boardModify" parameterType="board">
+		<![CDATA[
+		/*	boardModify	*/
+			UPDATE TB_BOARD
+			SET BO_TITLE         =  #{boTitle}
+			  , BO_CONTENT       =  #{boContent}
+			WHERE BO_NO = #{boNo}
+		]]>
+	</update>
+
+	<update id="updateBoardHits" parameterType="board">
+		<![CDATA[
+		/*	updateBoardHits	*/
+			UPDATE TB_BOARD
+			SET BO_HIT          =  BO_HIT + 1
+			WHERE BO_NO = #{boNo}
+		]]>
+	</update>
+
+	<delete id="deleteBoard" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+			DELETE
+			FROM  TB_BOARD
+			WHERE 1=1
+			AND BO_NO = #{boNo}
+		]]>
+	</delete>
+
+	<delete id="deleteBoard2" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard2	*/
+			DELETE
+			FROM  TB_BOARD
+			WHERE 1=1
+			AND BO_REG_ID = #{boRegId};
+		]]>
+	</delete>
+</mapper>

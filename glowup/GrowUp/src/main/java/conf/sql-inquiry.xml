@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="inquiry">
+	<resultMap id="inquiryResult" type="inquiry">
+		<result property="inqNo" column="INQ_NO" />
+		<result property="inqTitle" column="INQ_TITLE" />
+		<result property="inqContent" column="INQ_CONTENT" />
+		<result property="inqPhone" column="INQ_PHONE" />
+		<result property="inqEmail" column="INQ_EMAIL" />
+		<result property="inqRegId" column="INQ_REG_ID" />
+		<result property="inqModId" column="INQ_MOD_ID" />
+		<result property="inqRegDate" column="INQ_REG_DATE" />
+		<result property="inqModDate" column="INQ_MOD_DATE" />
+	</resultMap>
+
+	<select id="inquiryList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	inquiryList	*/
+            SELECT INQUIRY.INQ_NO
+				 , INQUIRY.INQ_TITLE
+				 , INQUIRY.INQ_CONTENT
+				 , INQUIRY.INQ_PHONE
+				 , (SELECT USER_CODE FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS USER_CODE
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS USER_NAME
+				 , (SELECT EMAIL FROM TB_COM_USER WHERE EMAIL = INQUIRY.INQ_EMAIL) AS EMAIL
+				 , INQUIRY.INQ_REG_DATE
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE = INQ_MOD_ID) AS USER_NAME_MODI
+				 , INQUIRY.INQ_MOD_DATE
+			FROM   TB_INQUIRY INQUIRY
+			WHERE  1=1
+			ORDER BY INQUIRY.INQ_REG_DATE DESC
+		]]>
+	</select>
+
+	<select id="inquiryView" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	inquiryView	*/
+            SELECT INQUIRY.INQ_NO
+				 , INQUIRY.INQ_TITLE
+				 , INQUIRY.INQ_CONTENT /* 내용 */
+				 , (SELECT PHONE_CD||'-'||PHONE_NUM FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS PHONE /* 전화번호 */
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS USER_NAME /* 등록자 */
+				 , (SELECT EMAIL FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS EMAIL /* 이메일 */
+				 , INQUIRY.INQ_REG_DATE /*  등록일자 */
+				 , (SELECT NAME FROM TB_COM_USER WHERE USER_CODE = INQUIRY.INQ_REG_ID) AS USER_NAME_MODI  /* 수정자*/
+				 , INQUIRY.INQ_MOD_DATE /*  수정일자*/
+			FROM   TB_INQUIRY INQUIRY
+			WHERE  1=1
+			AND    INQUIRY.INQ_NO = #{inqNo}
+		]]>
+	</select>
+
+	<select id="maxInquiryNo" resultType="string">
+		<![CDATA[
+		/*	maxInquiryNo	*/
+			SELECT MAX(INQ_NO) 
+			FROM TB_INQUIRY
+		]]>
+	</select>
+
+	<insert id="inquiryWrite" parameterType="inquiry">
+		<![CDATA[
+		/*	inquiryWrite	*/
+			INSERT INTO TB_INQUIRY
+				(INQ_NO
+				, INQ_TITLE
+				, INQ_CONTENT
+				, INQ_PHONE
+				, INQ_EMAIL
+				, INQ_REG_ID
+				, INQ_REG_DATE				
+				, INQ_MOD_DATE				
+			) VALUES 
+				('A' || LPAD(INQUIRY_SEQ.NEXTVAL, 5, 0) /* N*/
+				, #{inqTitle}
+				, #{inqContent}
+				, #{inqPhone}
+				, #{inqEmail}
+				, #{inqRegId}
+				, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+				, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
+			)			
+		
+		]]>
+	</insert>
+	
+
+	<update id="inquiryModify" parameterType="inquiry">
+		<![CDATA[
+		/*	inquiryModify */
+			
+			UPDATE TB_INQUIRY
+			SET INQ_TITLE         =  #{inqTitle}
+			  , INQ_CONTENT       =  #{inqContent}
+			  , INQ_PHONE         =  #{inqPhone}
+			  , INQ_EMAIL         =  #{inqEmail}
+			  , INQ_MOD_DATE	  =  TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')  
+			WHERE INQ_NO = #{inqNo}
+			
+		]]>
+	</update>
+
+
+	<delete id="deleteInquiry" parameterType="map">
+		<![CDATA[
+		/*	deleteInquiry	*/
+			DELETE
+			FROM  TB_INQUIRY
+			WHERE 1=1
+			AND INQ_NO = #{inqNo}
+		]]>
+	</delete>
+	
+	<delete id="deleteInquiry2" parameterType="map">
+		<![CDATA[
+		/*	deleteinquiry2	*/
+			DELETE
+			FROM  TB_INQUIRY
+			WHERE 1=1
+			AND INQ_REG_ID = #{inqRegId}
+		]]>
+	</delete>
+
+</mapper>
