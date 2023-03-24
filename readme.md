@@ -43,6 +43,8 @@
 
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_bowBoot.png" width="500">
 
+<hr>
+
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_nowFull.png" width="500" heigth = 800>
 
 ###### 기능 구현
