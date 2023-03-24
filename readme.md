@@ -14,6 +14,7 @@
 
 ###### 기능구현
 1)COMMUNITY 게시판(CRUD)
+&![커뮤니티gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/writeCommunity.gif)
 
 ### 2. Aroma, Fragancia (온라인 향수 판매 사이트 모의 제작)
 
