@@ -23,7 +23,7 @@
 
 ![커뮤니티gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/writeCommunity.gif)
 
-### 2. Aroma, Fragancia (온라인 향수 판매 사이트 모의 제작)
+### 2. Thirdmuseum (아트홀 페이지 모의 제작)
 
 ###### 사이트맵 작성
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_depth.png" width="500">
@@ -41,8 +41,14 @@
 ###### 프론트 엔드 (반응형 웹 적용)
 1)현재전시 페이지
 
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_bowBoot.png" width="500">
+
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_nowFull.png" width="500">
+
 ###### 기능 구현
 1)찾아오시는 길 (카카오지도 API 적용)
+
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_mapAPI.png" width="500">
 
 ### 3.Glow Up (온라인 향수 판매 사이트 모의 제작)
 
