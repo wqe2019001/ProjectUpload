@@ -43,7 +43,7 @@
 
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_bowBoot.png" width="500">
 
-<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_nowFull.png" width="500">
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_nowFull.png" width="500" heigth = 800>
 
 ###### 기능 구현
 1)찾아오시는 길 (카카오지도 API 적용)
