@@ -12,6 +12,7 @@
 
 
 3)PURCHASE HISTORY(구매내역)
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_HISTORY.jpg" width="500">
 
 ###### 기능구현
 1)COMMUNITY 게시판(CRUD)
@@ -21,6 +22,13 @@
 ### 2. Aroma, Fragancia (온라인 향수 판매 사이트 모의 제작)
 
 ###### 사이트맵 작성
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_depth.png" width="500">
+
+###### 테이블 명세서 작성
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_table.png" width="500">
+
+###### 폴더 규칙 지정
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/tm_folder.png" width="500">
 
 ###### SQL 쿼리문 작성
 
