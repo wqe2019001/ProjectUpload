@@ -36,6 +36,8 @@
 
 ###### SQL 쿼리문 작성
 
+경로 : /ProjectUpload/image/2) MiniProject_Second.sql
+
 ###### 프론트 엔드 (반응형 웹 적용)
 1)현재전시 페이지
 
