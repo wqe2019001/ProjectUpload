@@ -8,7 +8,7 @@
 1)FAQ
 
 2)CART(장바구니)
-*![장바구니이미지](https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_CART.jpg)
+*![장바구니이미지](https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_CART.jpg){: width="60%" height="100"}
 
 3)PURCHASE HISTORY(구매내역)
 
