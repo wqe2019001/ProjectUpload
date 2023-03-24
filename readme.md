@@ -7,6 +7,8 @@
 ###### 퍼블리싱
 1)FAQ
 
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_FAQ.gif" width="500">
+
 2)CART(장바구니)
 
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_CART.jpg" width="500">
