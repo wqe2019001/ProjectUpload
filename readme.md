@@ -57,10 +57,19 @@
 #### 기능 구현
 1)QNA 게시판 (CRUD)
 
+![QNACRUDgif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/QnACRUD 2023-03-24 17-51-38.gif)
+
+1-1)QNA 게시판 포함된 단어 찾기 기능 구현
+
+![게시판서gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/QnAsearch 2023-03-24 18-20-16.gif)
+
 2)장바구니(결제API 연동)
+
+![결제연gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/GU_pay 2023-03-24 18-25-20.gif)
 
 3)구매내역
 
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/GU_PayHistory.png" width="500">
 
 
 
