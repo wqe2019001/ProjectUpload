@@ -57,7 +57,7 @@
 #### 기능 구현
 1)QNA 게시판 (CRUD)
 
-<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/imageQnACRUD 2023-03-24 17-51-38.gif" width="500">
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/QnACRUD 2023-03-24 17-51-38.gif" width="500">
 
 1-1)QNA 게시판 포함된 단어 찾기 기능 구현
 
