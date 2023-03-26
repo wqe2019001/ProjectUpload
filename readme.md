@@ -65,6 +65,8 @@
 
 2)장바구니(결제API 연동)
 
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/GU_pay 2023-03-24 18-25-20.gif" width="500">
+
 ![결제연gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/GU_pay 2023-03-24 18-25-20.gif)
 
 3)구매내역
