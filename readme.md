@@ -5,16 +5,14 @@
 ### 1. Aroma, Fragancia (온라인 향수 판매 사이트 모의 제작)
 
 ###### 퍼블리싱
-1)FAQ
 
-<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_FAQ.gif" width="500">
 
-2)CART(장바구니)
+1)CART(장바구니)
 
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_CART.jpg" width="500">
 
 
-3)PURCHASE HISTORY(구매내역)
+2)PURCHASE HISTORY(구매내역)
 
 <img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_HISTORY.jpg" width="500">
 
@@ -22,6 +20,10 @@
 1)COMMUNITY 게시판(CRUD)
 
 ![커뮤니티gif](https://github.com/wqe2019001/ProjectUpload/blob/master/image/writeCommunity.gif)
+
+2)FAQ
+
+<img src="https://github.com/wqe2019001/ProjectUpload/blob/master/image/AROMA_FAQ.gif" width="500">
 
 ### 2. Thirdmuseum (아트홀 페이지 모의 제작)
 
